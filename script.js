@@ -29,6 +29,8 @@ boxes.forEach(box => box.addEventListener('click', pick));
 replay.addEventListener('click', playAgain);
 reset.addEventListener('click', restart);
 
+toggleActive();
+
 function pick(event) {
   const { row, column } = event.target.dataset;
   const turn = (round + move) % 2 === 0 ? playerTwo : playerOne;
@@ -44,7 +46,7 @@ function pick(event) {
     })
     document.querySelector(`.scoreboard .${winner}`).classList.add('won');
     document.querySelector('#score').textContent = `${playerOneScore} : ${playerTwoScore}`
-    document.querySelectorAll('.score span').forEach(el => el.classList.remove('active'));
+    // document.querySelectorAll('.score span').forEach(el => el.classList.remove('active'));
   }
   if (round > 9 && !check()) {
     boxes.forEach(box => box.classList.add('lost'));
