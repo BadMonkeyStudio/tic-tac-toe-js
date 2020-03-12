@@ -106,6 +106,7 @@ function restart() {
   playerTwoScore = 0;
   document.querySelector('#score').textContent = `${playerOneScore} : ${playerTwoScore}`
   move = 0;
+  toggleActive()
 }
 
 function toggleActive() {
